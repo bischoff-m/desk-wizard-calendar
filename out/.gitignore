@@ -1,0 +1,7 @@
+# Don't include the compiled files in the repo.
+# They should be uploaded to GitHub releases instead.
+
+# Ignore all files except this file.
+*
+*/
+!.gitignore
