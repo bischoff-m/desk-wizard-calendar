@@ -15,7 +15,7 @@ class Plugin2 {
 	}
 }
 
-class CalendarPlugin extends Plugin2 {
+export class CalendarPlugin extends Plugin2 {
 	constructor() {
 		super();
 		this.windows.push({
@@ -26,5 +26,3 @@ class CalendarPlugin extends Plugin2 {
 		});
 	}
 }
-
-new CalendarPlugin();
