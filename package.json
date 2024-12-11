@@ -1,5 +1,5 @@
 {
-	"name": "desk-wizard-sample-plugin",
+	"name": "desk-wizard-calendar",
 	"version": "1.0.0",
 	"description": "This is a sample plugin for DeskWizard",
 	"main": "main.js",
