@@ -1,28 +1,31 @@
 import React from "react";
+import CalendarComponent from "./CalendarComponent";
+import { PluginBase, WindowBase, WindowManager } from "desk-wizard";
 
-type Window2 = {
-	name: string;
-	width: number;
-	height: number;
-	render: React.FC;
-};
+class CalendarWindow extends WindowBase {
+    constructor(manager: WindowManager) {
+        super(manager);
+    }
 
-class Plugin2 {
-	windows: Window2[] = [];
+    public getTitle(): string {
+        return "Calendar";
+    }
 
-	constructor() {
-		console.log("Plugin constructor");
-	}
+    public getIcon(): string {
+        return "calendar";
+    }
+
+    public render(): React.ReactElement {
+        return <CalendarComponent />;
+    }
 }
 
-export class CalendarPlugin extends Plugin2 {
-	constructor() {
-		super();
-		this.windows.push({
-			name: "calendar",
-			width: 200,
-			height: 300,
-			render: () => <div>Calendar</div>,
-		});
-	}
+export class Plugin extends PluginBase {
+    constructor(manager: WindowManager) {
+        super(manager);
+    }
+
+    public onStartup() {
+        this.manager.newWindow("calendar", CalendarWindow);
+    }
 }
